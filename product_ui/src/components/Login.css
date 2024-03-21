@@ -1,0 +1,88 @@
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('https://www.productplan.com/uploads/Stages-in-Product-Management-Process.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.8; /* Adjust opacity as needed */
+}
+
+.login-card {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 20px; /* Rounded corners */
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+    width: 350px; /* Increased width for a better layout */
+}
+
+.login-header {
+    font-size: 2.5rem; /* Larger font size */
+    text-align: center;
+    margin-bottom: 25px;
+    color: #333333;
+}
+
+.input-field {
+    position: relative;
+    margin-bottom: 25px; /* Increased margin for better spacing */
+}
+
+.input-field input {
+    width: 100%;
+    padding: 12px; /* Increased padding for better input appearance */
+    border: none;
+    border-bottom: 2px solid #cccccc;
+    outline: none;
+    font-size: 1.1rem; /* Increased font size */
+    background-color: transparent;
+}
+
+.input-field label {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    color: #777777;
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+.input-field input:focus + label,
+.input-field input:valid + label {
+    top: 0;
+    font-size: 0.9rem; /* Adjusted font size */
+    color: #333333;
+}
+
+.login-button {
+    width: 100%;
+    background-color: #4CAF50; /* Green button color */
+    color: #ffffff;
+    border: none;
+    padding: 12px; /* Increased padding */
+    border-radius: 8px; /* Rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 1.1rem; /* Increased font size */
+}
+
+.login-button:hover {
+    background-color: #2E8B57; /* Darker green on hover */
+}
+
+.sign-up {
+    text-align: center;
+    margin-top: 20px;
+    color: #333333;
+}
+
+.sign-up a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.sign-up a:hover {
+    text-decoration: underline;
+}

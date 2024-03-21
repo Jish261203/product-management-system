@@ -1,0 +1,88 @@
+.register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('https://www.productplan.com/uploads/Stages-in-Product-Management-Process.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.8; /* Adjust opacity as needed */
+}
+
+.register-card {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+    width: 350px; /* Increased width for a better layout */
+    max-width: 90%; /* Adjusted maximum width */
+}
+
+.register-header {
+    font-size: 2rem; /* Larger font size */
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333333;
+}
+
+.register-input-field {
+    margin-bottom: 25px; /* Increased margin for better spacing */
+}
+
+.register-input-field input {
+    width: 100%;
+    padding: 12px; /* Increased padding for better input appearance */
+    border: none;
+    border-bottom: 2px solid #cccccc;
+    outline: none;
+    font-size: 1.1rem; /* Increased font size */
+    background-color: transparent;
+}
+
+.register-input-field label {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    color: #777777;
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+.register-input-field input:focus + label,
+.register-input-field input:valid + label {
+    top: 0;
+    font-size: 0.9rem; /* Adjusted font size */
+    color: #333333;
+}
+
+.register-button {
+    width: 100%;
+    background-color: #32a852; /* Green button color */
+    color: #ffffff;
+    border: none;
+    padding: 12px; /* Increased padding */
+    border-radius: 8px; /* Rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 1.1rem; /* Increased font size */
+}
+
+.register-button:hover {
+    background-color: #3ab64d; /* Darker green on hover */
+}
+
+.sign-in {
+    text-align: center;
+    margin-top: 20px;
+    color: #333333;
+}
+
+.sign-in a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.sign-in a:hover {
+    text-decoration: underline;
+}
