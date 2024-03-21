@@ -4,7 +4,10 @@ import productService from "../service/product.service";
 
 const Home = () => {
 	const [productList, setProductList] = useState([]);
+	const [searchQuery, setSearchQuery] = useState("");
+	const [filteredProducts, setFilteredProducts] = useState([]);
 	const [msg, setMsg] = useState("");
+
 	useEffect(() => {
 		init();
 	}, []);
@@ -14,6 +17,7 @@ const Home = () => {
 			.getAllProduct()
 			.then((res) => {
 				setProductList(res.data);
+				setFilteredProducts(res.data); // Initialize filteredProducts with all products
 			})
 			.catch((error) => {
 				console.log(error);
@@ -24,12 +28,22 @@ const Home = () => {
 		productService
 			.deleteProduct(id)
 			.then((res) => {
-				setMsg("Delete Sucessfully");
+				setMsg("Delete Successfully");
 				init();
 			})
 			.catch((error) => {
 				console.log(error);
 			});
+	};
+
+	// Function to handle search
+	const handleSearch = (e) => {
+		const query = e.target.value;
+		setSearchQuery(query);
+		const filtered = productList.filter((product) =>
+			product.productName.toLowerCase().includes(query.toLowerCase())
+		);
+		setFilteredProducts(filtered);
 	};
 
 	return (
@@ -44,7 +58,16 @@ const Home = () => {
 							</div>
 
 							<div className="card-body">
-								<table class="table">
+								{/* Search Input Field */}
+								<input
+									type="text"
+									className="form-control mb-3"
+									placeholder="Search by product name"
+									value={searchQuery}
+									onChange={handleSearch}
+								/>
+
+								<table className="table">
 									<thead>
 										<tr>
 											<th scope="col">Sl No</th>
@@ -56,9 +79,9 @@ const Home = () => {
 										</tr>
 									</thead>
 									<tbody>
-										{productList.map((p, num) => (
-											<tr>
-												<td>{num + 1}</td>
+										{filteredProducts.map((p, index) => (
+											<tr key={index}>
+												<td>{index + 1}</td>
 												<td>{p.productName}</td>
 												<td>{p.description}</td>
 												<td>{p.price}</td>
